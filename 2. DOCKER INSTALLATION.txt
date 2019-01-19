@@ -1,0 +1,35 @@
+PRE-REQUISITES:-
+===============
+1. Can be installed on windows/linux/mac
+2. Linux o.s must be 64 bit or 86 bit
+3. you need root/sudo privileges
+4. docker can be installed on > rhel7, centos7
+
+
+
+INSTALLATION AND CONFIGURATION ON CENTOS/RHEL:-
+==============================================
+
+1. update yum repo
+   #yum update
+
+
+2. Can be installed with curl script or setting up epel repo 
+   #curl -sSL https://get.docker.com/ | sh  (or)
+   #rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epelrelease-6-8.noarch.rpm (or) 
+   #yum install epel-release
+
+
+3. install docker package
+   #yum install -y docker
+
+
+4. start and enable services
+   #systemctl start docker && systemctl enable docker
+
+
+5. now check docker status 
+   #systemctl status docker
+
+
+6. #docker info

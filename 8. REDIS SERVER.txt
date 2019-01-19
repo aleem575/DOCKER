@@ -1,0 +1,25 @@
+CREATING REDIS-SERVER ON UBUNTU:-
+================================
+
+A) CREATE A DOCKER FILE
+
+#vi Dockerfile
+--------------------------------------------------------
+FROM ubuntu
+MAINTAINER kommoju.manikanth@gmail.com
+RUN apt-get update && apt-get install -y redis-server
+EXPOSE 8090
+ENTRYPOINT ["/usr/bin/redis-server"]
+---------------------------------------------------------
+
+
+B) BUILD DOCKER IMAGE
+#docker build -t redis-server /pathofdockerfile
+
+
+C) RUN DOCKER IMAGE
+#docker run -d imagename
+
+
+D) PUSH TO DOCKERHUB
+#docker push user-name/image-name

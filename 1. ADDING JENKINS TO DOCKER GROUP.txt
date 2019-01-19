@@ -1,0 +1,13 @@
+HOW TO ADD JENKINS TO DOCKER GROUP:-
+===================================
+
+1. create a group called "docker"
+   #groupadd docker
+
+
+2. add jenkins to docker group
+   #usermod -G docker jenkins
+
+
+3. restart docker
+   #service docker restart	

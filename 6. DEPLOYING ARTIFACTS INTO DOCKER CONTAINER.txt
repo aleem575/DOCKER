@@ -1,0 +1,32 @@
+DEPLOY WAR FILES FROM HOST MACHINE TO DOCKER CONTAINER:-
+======================================================
+
+A)CREATE A DOCKER FILE
+
+vi Dockerfile
+------------------------------------------------------------------------------------------
+		#Make sure that your artifact is in the same directory as your Dockerfile.
+FROM <app_server_image_name>:<tag> 
+      #e.g. FROM tomcat:7.4.0
+
+		#COPY the artifacts to </server/deployment/path>
+COPY/ADD . </server/deployment/path>
+	#ADD dockerwar.war /usr/local/tomcat/webapps/
+
+--------------------------------------------------------------------------------------------
+
+
+B) BUILD DOCKER IMAGE
+#docker build -t webserver .
+
+
+C) RUN DOCKER IMAGE
+#docker run -it --rm -p 8080:8080 --name dockerwar webserver
+
+
+D) CHECK IF IT IS PROPERLY DEPLOYED OR NOT BY OPENING BROWSER
+Open a browser with URL http://192.168.59.103:8080/dockerwar/
+
+
+E) TO SEE ALL THE LOG FILES
+#docker exec -it e6b2 ls /usr/local/tomcat/logs/

@@ -1,0 +1,29 @@
+1. vi Dockerfile
+---------------------------------------------------------
+FROM docker.io/centos
+MAINTAINER admin
+RUN yum update && yum -y install httpd
+RUN echo "Welcome to our homepage created using dockerfile" > /var/www/html/index.html
+EXPOSE 80
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+--------------------------------------------------------
+
+
+2. BUILD DOCKER IMAGE
+   #docker build -t imagename:tag .
+
+
+3. see your image
+   #docker images
+
+
+4. run the container
+   #docker run -d -p 80:80 ImageName
+
+
+5. now check the running container 
+   #docker ps
+
+
+6. check the site
+   #curl http://localhost/80

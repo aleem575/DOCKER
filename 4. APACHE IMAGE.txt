@@ -1,0 +1,23 @@
+CREATING APACHE DOCKER IMAGE ON UBUNTU:-
+=======================================
+
+A) CREATE A DOCKER FILE
+
+#vi Dockerfile
+---------------------------------------------------
+FROM ubuntu:14.04
+RUN apt-get update && apt-get install -y apache2 && apt-get install -y apache2-utils && apt-get clean
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+--------------------------------------------------
+
+
+
+B) BUILD DOCKER IMAGE
+#docker build -t imagename:tag .     (where . represents currents directory path)
+
+
+
+NOTES:-
+======
+service apache2 start commands wont work in docker files, so we give binary commands /usr/sbin/apache2ctl
